@@ -8,16 +8,24 @@ const Categories = () => {
     <ScrollArea className="w-full border rounded-sm">
       <div className="flex space-x-4 p-4">
         {discussionCategories.map((x) => (
-          <div className="w-20 flex flex-col gap-2 items-center flex-1 relative">
+          <div
+            key={`popular-disc-cat-${x.id}`}
+            className="flex flex-col gap-2 items-center flex-1 relative min-w-[80px]"
+          >
             <a
               href={x.link}
               target="_blank"
               className="absolute inset-0 z-10"
             />
             <div className="relative rounded-full w-[62px] h-[62px]">
-              <Image src={x.img} alt={x.catName} fill />
+              <Image
+                src={x.img}
+                alt={x.catName}
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              />
             </div>
-            <p className="text-xs text-gray-600 text-center font-medium truncate">
+            <p className="text-xs text-gray-600 text-center font-medium line-clamp-2">
               {x.catName}
             </p>
           </div>

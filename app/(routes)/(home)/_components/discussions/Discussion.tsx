@@ -1,5 +1,6 @@
 import { timeAgo } from "@/app/_utils/general";
 import { cn } from "@/app/_utils/styles";
+import { ChevronRight } from "lucide-react";
 import React from "react";
 
 const DiscussionItem = ({
@@ -21,16 +22,19 @@ const DiscussionItem = ({
 }) => {
   return (
     <div>
-      <div className="flex items-center justify-between pb-2">
-        <span className="text-lg font-medium text-red-600">{title}</span>
-        <a
-          href={seeMoreLink}
-          target="_blank"
-          className="hover:underline text-xs"
-        >
-          See More
-        </a>
-      </div>
+      <a
+        href={seeMoreLink}
+        target="_blank"
+        className="sm:text-lg font-semibold text-red-600 uppercase mb-2 flex items-center hover:underline"
+      >
+        {title}
+        <ChevronRight
+          className="inline-block p-0"
+          spacing={0}
+          width="18"
+          height="18"
+        />
+      </a>
       <div>
         {items.map((itm, key) => (
           <div

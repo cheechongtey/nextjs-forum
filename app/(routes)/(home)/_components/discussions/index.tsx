@@ -35,7 +35,7 @@ const items = [
 
 const Discussion = async () => {
   return (
-    <div className="py-6 md:py-12">
+    <div className="py-4 md:py-8">
       <div className="border rounded-sm p-4 border-b">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <DiscussionItem

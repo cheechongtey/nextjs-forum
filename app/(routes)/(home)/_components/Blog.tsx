@@ -7,7 +7,9 @@ const Blog = () => {
   return (
     <div className="p-4 border rounded-sm mb-12">
       <div className="flex items-center justify-between pb-2">
-        <span className="text-lg font-medium text-red-600">Blog</span>
+        <span className="text-lg font-semibold uppercase text-red-600">
+          Blog
+        </span>
         <a
           href="https://www.mycarforum.com/blogs/blog/12-myautoblog/"
           target="_blank"
@@ -18,7 +20,7 @@ const Blog = () => {
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {blogs.map((x) => (
-          <div className="relative group">
+          <div key={`blog_${x.id}`} className="relative group">
             <a
               href={x.link}
               target="_blank"
