@@ -17,7 +17,7 @@ const Categories = () => {
             <div className="relative rounded-full w-[62px] h-[62px]">
               <Image src={x.img} alt={x.catName} fill />
             </div>
-            <p className="text-xs text-gray-600 text-center font-medium">
+            <p className="text-xs text-gray-600 text-center font-medium truncate">
               {x.catName}
             </p>
           </div>

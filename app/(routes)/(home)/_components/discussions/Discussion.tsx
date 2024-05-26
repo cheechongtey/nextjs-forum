@@ -1,4 +1,5 @@
 import { timeAgo } from "@/app/_utils/general";
+import { cn } from "@/app/_utils/styles";
 import React from "react";
 
 const DiscussionItem = ({
@@ -19,8 +20,8 @@ const DiscussionItem = ({
   }[];
 }) => {
   return (
-    <div className="p-4 md:p-6 rounded-sm border">
-      <div className="flex items-center justify-between border-b pb-4">
+    <div>
+      <div className="flex items-center justify-between pb-2">
         <span className="text-lg font-medium text-red-600">{title}</span>
         <a
           href={seeMoreLink}
@@ -31,26 +32,24 @@ const DiscussionItem = ({
         </a>
       </div>
       <div>
-        {items.map((itm) => (
+        {items.map((itm, key) => (
           <div
             key={`${itm.title}_${itm.id}`}
-            className="pt-2 pb-4 border-b last:border-b-0 last:pb-0"
+            className={cn("p-2.5", [key % 2 === 0 ? "bg-gray-200" : ""])}
           >
-            <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <div className="text-gray-500 text-[10px] min-w-[70px]">
+                {itm.type === "sponsored"
+                  ? "Sponsored"
+                  : timeAgo(itm.postDateTime)}
+              </div>
               <a
                 href={itm.url}
                 target="_blank"
-                className="font-medium text-xs "
+                className="font-medium text-xs hover:underline text-blue-800 truncate"
               >
                 {itm.title}
               </a>
-              <div className="text-gray-500 text-xs hidden sm:block">
-                {timeAgo(itm.postDateTime)}
-              </div>
-            </div>
-            <p className="text-gray-500 text-xs mb-2 sm:mb-0">{itm.desc}</p>
-            <div className="text-gray-500 text-xs sm:hidden">
-              {timeAgo(itm.postDateTime)}
             </div>
           </div>
         ))}
