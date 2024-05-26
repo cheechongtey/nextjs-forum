@@ -1,5 +1,6 @@
 import React from "react";
 import DiscussionItem from "./Discussion";
+import Categories from "./Categories";
 
 const items = [
   {
@@ -33,17 +34,20 @@ const items = [
 
 const Discussion = async () => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 py-12">
-      <DiscussionItem
-        title="Car-related Discussions"
-        seeMoreLink="https://www.mycarforum.com/index.php?app=mcfhome&section=latestdiscussions&cat=carrelated"
-        items={items}
-      />
-      <DiscussionItem
-        title="Non Car-related Discussions"
-        seeMoreLink="https://www.mycarforum.com/index.php?app=mcfhome&section=latestdiscussions&cat=noncarrelated"
-        items={items}
-      />
+    <div className="py-6 md:py-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4 md:mb-6">
+        <DiscussionItem
+          title="Car-related Discussions"
+          seeMoreLink="https://www.mycarforum.com/index.php?app=mcfhome&section=latestdiscussions&cat=carrelated"
+          items={items}
+        />
+        <DiscussionItem
+          title="Non Car-related Discussions"
+          seeMoreLink="https://www.mycarforum.com/index.php?app=mcfhome&section=latestdiscussions&cat=noncarrelated"
+          items={items}
+        />
+      </div>
+      <Categories />
     </div>
   );
 };
