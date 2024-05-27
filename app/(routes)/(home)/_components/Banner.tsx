@@ -1,6 +1,5 @@
-import StyledInput from "@/app/_components/Input";
-import { Button } from "@/app/_components/ui/button";
 import React from "react";
+import SearchInput from "./SearchInput";
 
 const Banner = () => {
   return (
@@ -27,15 +26,7 @@ const Banner = () => {
           </a>
         </h2>
         <div className="animate-slidein opacity-0 [--slidein-delay:300ms] w-full md:max-w-[550px] mx-auto">
-          <div className="flex flex-col gap-4 sm:flex-row sm:gap-0">
-            <StyledInput
-              className="py-4 sm:rounded-r-none"
-              placeholder="Search Forum"
-            />
-            <Button className="p-4 bg-red-700 sm:rounded-l-none border border-red-700 hover:bg-red-400">
-              Search
-            </Button>
-          </div>
+          <SearchInput />
         </div>
       </div>
     </div>
