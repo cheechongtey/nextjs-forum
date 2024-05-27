@@ -36,17 +36,19 @@ const items = [
 const Discussion = async () => {
   return (
     <div className="py-4 md:py-8">
-      <div className="border rounded-sm p-4 border-b">
+      <div className="animate-slidein opacity-0 [--slidein-delay:300ms] border rounded-sm p-4 border-b">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <DiscussionItem
             title="Car-related Discussions"
             seeMoreLink="https://www.mycarforum.com/index.php?app=mcfhome&section=latestdiscussions&cat=carrelated"
             items={items}
+            className="animate-slidein opacity-0 [--slidein-delay:500ms]"
           />
           <DiscussionItem
             title="Non Car-related Discussions"
             seeMoreLink="https://www.mycarforum.com/index.php?app=mcfhome&section=latestdiscussions&cat=noncarrelated"
             items={items}
+            className="animate-slidein opacity-0 [--slidein-delay:550ms]"
           />
         </div>
         <hr className="my-4" />

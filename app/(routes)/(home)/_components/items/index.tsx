@@ -5,7 +5,7 @@ import Categories from "./Categories";
 
 const Item = () => {
   return (
-    <div className="p-4 border rounded-sm mb-12">
+    <div className="animate-slidein opacity-0 [--slidein-delay:1400ms] p-4 border rounded-sm mb-12">
       <div className="flex items-center justify-between pb-2">
         <span className="text-lg font-semibold text-red-600 uppercase">
           Items For sales
@@ -19,8 +19,16 @@ const Item = () => {
         </a>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-8 mb-12">
-        {items.map((x) => (
-          <div key={`item_${x.id}`} className="relative group">
+        {items.map((x, key) => (
+          <div
+            key={`item_${x.id}`}
+            className="animate-slidein opacity-0 relative group"
+            style={
+              {
+                "--slidein-delay": `${1500 + key * 50}ms`,
+              } as React.CSSProperties
+            }
+          >
             <div className="relative border border-gray-400 rounded-sm w-full h-[200px] mb-1 overflow-hidden">
               <a
                 href={x.link}

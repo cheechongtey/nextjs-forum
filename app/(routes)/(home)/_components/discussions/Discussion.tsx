@@ -7,6 +7,7 @@ const DiscussionItem = ({
   title,
   seeMoreLink,
   items,
+  className,
 }: {
   title: string;
   seeMoreLink: string;
@@ -19,9 +20,10 @@ const DiscussionItem = ({
     desc: string;
     postDateTime: string;
   }[];
+  className?: string;
 }) => {
   return (
-    <div>
+    <div className={className}>
       <a
         href={seeMoreLink}
         target="_blank"

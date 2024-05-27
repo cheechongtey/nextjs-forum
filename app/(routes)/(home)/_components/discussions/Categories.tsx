@@ -5,12 +5,17 @@ import React from "react";
 
 const Categories = () => {
   return (
-    <ScrollArea className="w-full border rounded-sm">
+    <ScrollArea className="w-full">
       <div className="flex space-x-4 p-4">
-        {discussionCategories.map((x) => (
+        {discussionCategories.map((x, key) => (
           <div
             key={`popular-disc-cat-${x.id}`}
-            className="flex flex-col gap-2 items-center flex-1 relative min-w-[80px]"
+            className={`animate-slidein opacity-0 flex flex-col gap-2 items-center flex-1 relative min-w-[80px]`}
+            style={
+              {
+                "--slidein-delay": `${600 + key * 80}ms`,
+              } as React.CSSProperties
+            }
           >
             <a
               href={x.link}

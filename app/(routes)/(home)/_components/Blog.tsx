@@ -5,7 +5,7 @@ import React from "react";
 
 const Blog = () => {
   return (
-    <div className="p-4 border rounded-sm mb-12">
+    <div className="animate-slidein opacity-0 [--slidein-delay:1100ms] p-4 border rounded-sm mb-12">
       <div className="flex items-center justify-between pb-2">
         <span className="text-lg font-semibold uppercase text-red-600">
           Blog
@@ -19,8 +19,16 @@ const Blog = () => {
         </a>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        {blogs.map((x) => (
-          <div key={`blog_${x.id}`} className="relative group">
+        {blogs.map((x, key) => (
+          <div
+            key={`blog_${x.id}`}
+            className="relative group animate-slidein opacity-0"
+            style={
+              {
+                "--slidein-delay": `${1200 + key * 50}ms`,
+              } as React.CSSProperties
+            }
+          >
             <a
               href={x.link}
               target="_blank"
