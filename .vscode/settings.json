@@ -5,5 +5,8 @@
   },
   "typescript.tsdk": ".yarn/sdks/typescript/lib",
   "typescript.enablePromptUseWorkspaceTsdk": true,
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "workbench.editorAssociations": {   
+      "*.md": "vscode.markdown.preview.editor",
+  }
 }
