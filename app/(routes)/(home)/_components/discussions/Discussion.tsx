@@ -16,8 +16,6 @@ const DiscussionItem = ({
     title: string;
     type: string;
     url: string;
-    cat_type: string;
-    desc: string;
     postDateTime: string;
   }[];
   className?: string;

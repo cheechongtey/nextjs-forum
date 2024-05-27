@@ -1,37 +1,7 @@
 import React from "react";
 import DiscussionItem from "./Discussion";
 import Categories from "./Categories";
-
-const items = [
-  {
-    id: 1,
-    title: "All about Consignment Car Sales.",
-    desc: "Welcome all",
-    type: "sponsored",
-    url: "https://www.mycarforum.com/forums/topic/2700429-all-about-consignment-car-sales/",
-    cat_type: "car",
-    postDateTime: "2024-05-26T07:23:21Z",
-  },
-  {
-    id: 2,
-    title:
-      "FORCE Big Brake Kit promotional Price. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry",
-    desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
-    type: "sponsored",
-    url: "https://www.mycarforum.com/forums/topic/2698037-force-big-brake-kit-promotional-price/",
-    cat_type: "car",
-    postDateTime: "2024-05-23T14:13:00Z",
-  },
-  {
-    id: 3,
-    title: "Singapore Reckless Drivers Part Xvi",
-    desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
-    type: "normal",
-    url: "https://www.mycarforum.com/forums/topic/2723495-singapore-reckless-drivers-part-xvi/",
-    cat_type: "car",
-    postDateTime: "2024-05-26T02:57:21Z",
-  },
-];
+import { carItems, nonCarItems } from "@/app/_mock/data";
 
 const Discussion = async () => {
   return (
@@ -41,13 +11,13 @@ const Discussion = async () => {
           <DiscussionItem
             title="Car-related Discussions"
             seeMoreLink="https://www.mycarforum.com/index.php?app=mcfhome&section=latestdiscussions&cat=carrelated"
-            items={items}
+            items={carItems}
             className="animate-slidein opacity-0 [--slidein-delay:500ms]"
           />
           <DiscussionItem
             title="Non Car-related Discussions"
             seeMoreLink="https://www.mycarforum.com/index.php?app=mcfhome&section=latestdiscussions&cat=noncarrelated"
-            items={items}
+            items={nonCarItems}
             className="animate-slidein opacity-0 [--slidein-delay:550ms]"
           />
         </div>
